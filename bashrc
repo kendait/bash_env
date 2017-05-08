@@ -1,7 +1,7 @@
 #~/.bashrc
 
 ##FUNCTIONS
-dateString() { echo $(date +"%Y%m%s_%H%M%S"); }
+dateString() { echo $(date +"%Y%m%d_%H%M_%S"); }
 
 ##ALIASES
 alias ll='ls -lFT'

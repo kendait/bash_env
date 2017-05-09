@@ -15,3 +15,5 @@ alias x='exit'
 alias mysql.stop='sudo /usr/local/mysql/support-files/mysql.server stop'
 alias mysql.start='sudo /usr/local/mysql/support-files/mysql.server start'
 alias servers='~/Developer/shell_scripts/servers.sh'
+alias localhost='~/Developer/shell_scripts/localhost.sh'
+if [[ ! -z $(alias localhost) ]]; then alias lh='localhost'; fi

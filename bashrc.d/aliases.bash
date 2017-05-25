@@ -1,8 +1,20 @@
-## aliases.bash
+#!/usr/local/bin/bash
+#
+#	[bash_env]: aliases.bash (to supplement bashrc)
+#	  
+#	[bash_env] are my user customizations to the bash shell
+#		
+#		AUTHOR: Kenneth Dait
+#		WEBSITE: http://kenanigans.com
+#		GIT REPO: https://github.com/kendait/bash_env
+#
+#
+
 
 #FILESYSTEM NAVIGATION
 	#alias ll='ls -lFT'
 	alias ll='longFileListing'
+	alias lla='longFileListing -A'
 	alias ls='ls -G'
 	alias lla='ls -lAFG'
 	alias la='ls -AF'
@@ -23,7 +35,17 @@
 	alias h='history'
 	alias x='exit'
 	alias sbash='source ~/.bash_profile'
-	alias vbash='vim ~/.bash_profile ~/.bashrc'
+	alias vbash='vim ~/.bash_profile ~/.bashrc ~/.bashrc.d/*'
 	alias grep='grep --color=auto'
 	alias lines='wc -l'
 	alias words='wc -w'
+	#alias mainframe='cd $MAINFRAME_PATH && clear && git status && ll -R'
+	alias beep='printf "\7"'
+
+#TESTING
+	alias fcpx='open -a "Final Cut Pro"'
+	alias safari='open -a "Safari"'
+	alias getimg='open https://images.google.com'
+	alias google='open https://google.com'
+
+

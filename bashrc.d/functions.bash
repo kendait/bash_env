@@ -1,4 +1,14 @@
-## functions.bash
+#!/usr/local/bin/bash
+#
+#	[bash_env]: functions.bash (to supplement bashrc)
+#	  
+#	[bash_env] are my user customizations to the bash shell
+#		
+#		AUTHOR: Kenneth Dait
+#		WEBSITE: http://kenanigans.com
+#		GIT REPO: https://github.com/kendait/bash_env
+#
+#
 
 listHomeDotFolders() {
 
@@ -51,10 +61,41 @@ listHomeDotFolders() {
 	echo -en "\n\nHOME DOT FILE DIRECTORIES:\n" && \
 		listArrayItemsByLine ${dotDirs[@]}
 	echo -en "\n\n"
+
 }
 
 dait() {
-	echo $(date +"%Y%m%d_%H%M_%S"); 
+
+	usage() {
+		echo -e "usage: \t dait [-d --date | -dn --datenumbers | -ds --datesortable]"
+		echo -e "	\t dait [-t --time | -ts --timestring | -dtstr|--datetimestring]"
+		echo -e "	\t dait [-u --usage | -h --help]"
+
+	}
+	
+	if [[ $# -eq 0 ]];
+	then
+		echo $(date +"%Y%m%d_%H%M_%S")
+
+	else
+		returnString=""
+		case $1 in
+			-d|--date) 			returnString=$(date +"%h %d, %Y");;
+			-dn|--datenumbers)		returnString=$(date +"%m-%d-%y");;
+			-ds|--datesortable)		returnString=$(date +"%Y%m%d");;
+			-t|--time) 			returnString=$(date +"%H:%M:%S");;
+			-ts|--timestring) 		returnString=$(date +%H%M%S);;
+			-dtstr|--datetimestring)	returnString=$(date +%Y%m%d%H%M%S);;
+			-u|--usage)			usage;;
+			-h|--help)			usage;;
+			*)				echo "[dait]: "$1" is not a recognized argument." && return;;
+		esac
+	fi
+
+	if [ -z "$returnString" ]; then return; fi
+
+	echo $returnString
+
 }
 
 longFileListing() {
@@ -84,3 +125,6 @@ longFileListing() {
 		grep -v '\.CFUserTextEncoding'
 
 }
+
+
+##END

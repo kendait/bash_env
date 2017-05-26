@@ -1,9 +1,9 @@
 #!/usr/local/bin/bash
 #
 #	[bash_env]: aliases.bash (to supplement bashrc)
-#	  
+#
 #	[bash_env] are my user customizations to the bash shell
-#		
+#
 #		AUTHOR: Kenneth Dait
 #		WEBSITE: http://kenanigans.com
 #		GIT REPO: https://github.com/kendait/bash_env
@@ -22,11 +22,8 @@
 	alias grep='grep --color=auto'
 	alias lines='wc -l'
 	alias words='wc -w'
-	alias bfunc='parseBashRCFunctions'
-	alias lal='parseBashRCAliases'
 	alias k='clearTermScrollback'
 	alias abash='atom ~/Developer/bash_env'
-	alias geek='accessGeeklets'
 
 #FILESYSTEM NAVIGATION
 	#alias ll='ls -lFT'
@@ -63,6 +60,14 @@
 	#alias mainframe='cd $MAINFRAME_PATH && clear && git status && ll -R'
 	alias osa_eof='osascript <<-eof'
 
+	alias desk='cd ~/Desktop'
+	alias docs='cd ~/Documents'
+	alias mov='cd ~/Movies'
+	alias pics='cd ~/Pictures'
+	alias dl='cd ~/Downloads'
+	alias music='cd ~/Music'
+	alias sites='cd ~/Sites'
+	alias back='goBack'
 
-	
+
 #END

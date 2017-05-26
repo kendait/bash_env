@@ -15,7 +15,7 @@
 	# HISTORY CUSTOMIZATIONS
 	# Source article: https://sanctum.geek.nz/arabesque/better-bash-history/
 	shopt -s histappend
-	shopt -s cmdhist		#force multi-line commands to fit only 1 line 
+	shopt -s cmdhist		#force multi-line commands to fit only 1 line
 	HISTFILESIZE=1000000
 	HISTSIZE=1000000
 	HISTCONTROL=ignorespace
@@ -25,6 +25,14 @@
 
 	export PS1 HISTIGNORE EDITOR PATH MAINFRAME_PATH COLUMNS LESSANSIMIDCHARS LESSANSIENDCHARS
 	export PROMPT_COMMAND HISTFILESIZE HISTSIZE HISTCONTROL HISTTIMEFORMAT
+
+	DESK=~/Desktop
+	DL=~/Downloads
+	DOCS=~/Documents
+	MUSIC=~/Music
+	PICS=~/Pictures
+	SITES=~/Sites
+	export DESK DL DOCS MUSIC PICS SITES
 
 #load user customizations
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi

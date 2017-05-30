@@ -1,9 +1,0 @@
-"\e[A": history-search-backward
-"\e[B": history-search-forward
-set show-all-if-ambiguous on
-	#default off
-set completion-ignore-case on
-	#default off
-
-	# source for what i've learned here is:
-	# https://coderwall.com/p/oqtj8w/the-single-most-useful-thing-in-bash

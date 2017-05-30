@@ -1,0 +1,6 @@
+
+#	BASH_FUNCTIONS
+
+vbash() {
+	vim ~/.bash_darwin_i386/bash_profile ~/.bash_darwin_i386/bashrc ~/.bash_darwin_i386/functions ~/.bash_darwin_i386/aliases
+}

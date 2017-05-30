@@ -1,0 +1,10 @@
+
+# BASH ALIASES
+
+alias ls='ls -G'
+alias lla='ls -oAFg'
+alias ll='ls -oFg'
+alias la='ls -AGF'
+alias c='clear'
+alias x='exit'
+alias h='history'

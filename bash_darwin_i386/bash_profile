@@ -1,0 +1,16 @@
+
+## darwin_i386_bash_profile
+
+#-: set environment vars
+PS1="[\w]\$ "
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin #default path
+PATH=/usr/local/mysql/bin:$PATH	#prepend mysql executable folder to path
+PATH=/usr/local/mysql/support-files:$PATH
+
+#-: export vars
+export PATH COLUMNS
+
+#-: load rbenv
+if [ -z "$(which rbenv)" ]; then
+	eval "$(rbenv init -)"
+fi

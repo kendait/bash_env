@@ -10,6 +10,28 @@
 #
 #
 
+
+
+
+#listRecentSpotlightShortcuts() {
+	#cat "/Users/${USER}/Library/Application\ Scripts/com.apple.spotlight.Shortcuts" |\
+	#grep '<key>'
+
+#}
+
+toggleMenubarAndDockHiding() {
+	menubar &>/dev/null && dock
+}
+
+
+toggleDockHiding() {
+	osascript <<eof
+	tell application "System Events"
+	    tell dock preferences to set autohide to not autohide
+	end tell
+eof
+}
+
 goBack() {
 	if [ ! -z $OLDPWD ]; then
 		cd $OLDPWD

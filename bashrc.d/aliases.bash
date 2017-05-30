@@ -69,5 +69,10 @@
 	alias sites='cd ~/Sites'
 	alias back='goBack'
 
+	alias dock='toggleDockHiding'
+	alias menubar='osascript $DEV/shell_scripts/_userLibraryScriptsDir/toggleMenuBarHiding.scpt'
+	
+	alias toggleBars='toggleMenubarAndDockHiding'
+	alias h='toggleMenubarAndDockHiding'
 
 #END

@@ -1,0 +1,4 @@
+
+#	BASH_ALIASES (UNIX/Darwin)
+
+alias vb='VBoxManage'

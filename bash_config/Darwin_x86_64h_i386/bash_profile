@@ -1,0 +1,87 @@
+#
+# bash_profile
+# author: Ken Dait
+# git repo: https://github.com/kendait/bash_env
+
+
+PS1="[\w]\$ "
+BASH_ENV="$(echo "$(uname)_$(machine)_$(arch)")"
+BASH_ENV_PATH=/Users/kenpd/Developer/bash_env
+
+#--------------------------------------------------#
+#-: SET PATH VARIABLE
+
+#-: hard-coded default path
+    PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin      
+# Setting PATH for 
+#-: MySQL 5.7.18 (main bin folder)
+    PATH=/usr/local/mysql/bin:$PATH	
+#-: MySQL 5.7.18 (support binaries)
+    PATH=/usr/local/mysql/support-files:$PATH
+#-: Python 3.6
+    PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}" #original version is saved in .bash_profile.pysave
+#-: [mainframe] - a scripting project
+    PATH=/Users/$USER/Developer/mainframe/bin:$PATH
+#-: bash_env_executables
+    PATH=/Users/$USER/Developer/bash_env/bin:$PATH
+
+
+
+#--------------------------------------------------#
+#-: SET DEFAULT APPS
+    
+    EDITOR=/usr/bin/vim
+    BROWSER="open -ga \"Safari\""
+
+
+#-: export vars
+
+#-: load rbenv - ruby version manager
+    if [ -z "$(which rbenv)" ]; then eval "$(rbenv init -)"; fi
+
+#-: Source article: https://sanctum.geek.nz/arabesque/better-bash-history/
+#-: BETTER HISTORY
+PROMPT_COMMAND='history -a'
+shopt -s histappend
+shopt -s cmdhist		               #force multi-line commands to fit only 1 line
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignorespace                #ignoreboth	would specify "ignorespace" and "ignoredups"
+HISTIGNORE="ll:ls:lla:la:lm:c:h:x:clear:exit:history:jobs"
+HISTTIMEFORMAT=' %F %T   '
+LESSANSIMIDCHARS="0123456789\[\;"
+LESSANSIENDCHARS="m"
+export PATH COLUMNS EDITOR BROWSER
+export PROMPT_COMMAND HISTFILESIZE HISTSIZE HISTCONTROL
+export HISTIGNORE HISTTIMEFORMAT LESSANSIMIDCHARS LESSANSIENDCHARS 
+
+
+#   LOAD OTHER USER CONFIGURATION
+
+#load user customizations
+	if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+
+
+#--------------------------------------------------#
+#-: EXPERIMENTAL:
+
+	DESK=~/Desktop
+	DL=~/Downloads
+	DOCS=~/Documents
+	MUSIC=~/Music
+	PICS=~/Pictures
+	SITES=~/Sites
+	export DESK DL DOCS MUSIC PICS SITES
+
+
+#--------------------------------------------------#
+#-: DISABLED
+#MAINFRAME_PATH="/Users/${USER}/Developer/mainframe"
+#BLOCKSIZE=1024
+#DEV="/Users/${USER}/Developer"
+#MF="${DEV}/mainframe"
+#MF_COMMANDS=$MF"/mf_commands"
+#PATH="/Users/${USER}/Developer/mainframe/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"	
+
+#-: END
+

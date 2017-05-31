@@ -1,0 +1,6 @@
+:syntax on
+:set mouse=a
+:set ai
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab

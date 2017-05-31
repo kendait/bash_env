@@ -1,0 +1,24 @@
+
+#   BASHRC
+
+## source global configuration
+if [ -n "$(ls $BASH_ENV_PATH/bash_config/global_config/global_aliases)" ]; then
+    source $BASH_ENV_PATH/bash_config/global_config/global_aliases
+fi
+
+
+## source system-specific config
+if [[ "${BASH_ENV}" == "Darwin_x86_64h_i386" ]]; then
+    if [[ -d "${BASH_ENV_PATH}/bash_config/${BASH_ENV}" ]] ; then
+
+        source_files=$BASH_ENV_PATH/bash_config/Darwin_x86_64h_i386
+
+        [ -f $source_files/bashrc_aliases ] \
+            && source $source_files/bashrc_aliases
+            :w
+
+        [ -f $source_files/bashrc_functions ] \
+            && source $source_files/bashrc_functions
+
+    fi
+fi

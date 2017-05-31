@@ -1,0 +1,13 @@
+
+#   GLOBAL BASH ALIASES
+
+
+alias ls='ls -xG'
+alias l.='ls -dF .*'
+alias ll='ls -oFg'
+alias lla='ll -A'
+alias la='ls -xAGF'
+alias c='clear'
+alias x='exit'
+alias h='history'
+alias j='jobs'

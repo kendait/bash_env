@@ -1,0 +1,7 @@
+
+#   BASH FUNCTIONS
+
+
+vbash() {
+    vim -O2 ~/.bash_profile ~/.bashrc
+}

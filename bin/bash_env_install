@@ -1,0 +1,27 @@
+#!/usr/local/bin/bash
+
+#	init bash_env
+
+presentFinalInstructions() {
+    echo "BASH_ENV successfully configured."
+}
+
+
+BASH_ENV_PATH=$(echo $(dirname $0 | sed 's|/bin.*$||'))
+BASH_ENV="$(echo "$(uname)_$(machine)_$(arch)")"
+
+export BASH_ENV_PATH BASH_ENV
+
+echo $BASH_ENV_PATH"/bash_config/"$BASH_ENV"/bash_profile"
+
+ln -s $BASH_ENV_PATH"/bash_config/"$BASH_ENV"/bash_profile" ~/.bash_profile
+ln -s $BASH_ENV_PATH"/bash_config/"$BASH_ENV"/bashrc" ~/.bashrc
+
+if ( [ -f $BASH_ENV_PATH"/editors/vimrc" ] && [ -L ~/.vimrc ] ); then
+    ln -s $BASH_ENV_PATH"/editors/vimrc" ~/.vimrc
+fi
+
+[ -L ~/.bash_profile ] \
+    && [ -L ~/.bashrc ] \
+    && [ -L ~/.vimrc ] \
+    && presentFinalInstructions
